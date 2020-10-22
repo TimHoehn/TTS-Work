@@ -1,0 +1,136 @@
+body {
+    background-color: #243447 !important;
+  }
+  
+  .jumbotron {
+    background-image: url(https://imagesvc.timeincapp.com/v3/fan/image?url=https://puckprose.com/wp-content/uploads/getty-images/2016/04/1137671593.jpeg&w=3200);
+    background-position: -450px;
+    background-repeat: no-repeat;
+    color: antiquewhite;
+    text-shadow: 2px 2px #555555;
+    background-attachment: fixed;
+    margin-bottom: 0;
+  }
+  
+  #jumboMargin {
+      margin-bottom: 0px;
+  }
+  
+  #leftList {
+      margin-top: 1rem;
+      list-style: none;
+      font-size: 1.5rem;
+      color: white;
+      text-shadow: 1px rgb(92, 92, 92);
+  }
+  
+  .leftListItem{
+      padding-bottom: 1rem;
+  }
+  
+  .leftListItem:hover{
+      color: #00acee;
+  }
+  
+  #middleList {
+      list-style: none;
+      padding: 0rem 1rem 1rem 1rem;
+  }
+  
+  /* icon and border*/
+  .iconPad {
+      padding-top: 1rem;
+      padding-left: 1rem;
+      border: 1px solid rgb(150, 149, 149);
+      border-top: none;
+      border-bottom: none;
+  }
+  
+  /* make icon round */
+  .circle {
+      border-radius: 1.5rem;
+  }
+  
+  /* formatting for name and handle*/
+  
+  .namePad {
+      padding-left: .75rem;
+  }
+  
+  .featureContent {
+      color: white;
+      border: 1px solid rgb(150, 149, 149);
+      border-top: none;
+      padding: 1rem;
+  }
+  
+  
+  /* styling for under post buttons */
+  .postButtons1, .postButtons2, .postButtons3, .postButtons4  {
+      list-style: none;
+      display: inline;
+      padding: 0px 2rem;
+      font-size: .5rem;
+  }
+  
+  
+  /* below post button colors */
+  .postButtons1:hover  {
+      color: green;
+  }
+  
+  .postButtons2:hover {
+      color: blue;
+  }
+  
+  .postButtons3:hover {
+      color: red;
+  }
+  
+  .postButtons4:hover {
+      color: rgb(0, 191, 255);
+  }
+  /* end of post buttons */
+  
+  
+  #rightList{
+      padding-top: 1rem;
+      list-style: none;
+      color: white;
+  }
+  
+  .rightListCard {
+      border: 1px solid white;
+      background-color: rgb(34, 34, 34);
+      padding: .25rem;
+      text-align: center;
+  }
+  
+  .rightListCard:hover {
+      background-color: #00acee;
+      color: black;
+  }
+  
+  #searchRightList {
+      padding: 0px 20px;
+  }
+  
+  footer {
+    border-top: 1px solid white;
+    position: absolute;
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  .contact{
+      list-style: none;
+      display: inline;
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+  
+  .borderLeft {
+      border-left: 1px solid white;
+  }
+  

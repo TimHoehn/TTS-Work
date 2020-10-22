@@ -1,0 +1,1 @@
+sorry for it looking really similar to your project. I Plan to come back and make it look more like twiter with icons and such and change the scrip around some more. I just ran out of time before having to turn it in.
