@@ -20,12 +20,11 @@ public class BlogPostController {
 
     private List<BlogPost> posts = new ArrayList<>();
 
-    @GetMapping
+    @GetMapping(value = "/")
     public String index(BlogPost blogpost, Model model) {
         posts.removeAll(posts);
         for(BlogPost postFromDB : blogPostRepository.findAll()){
             posts.add(postFromDB);
-            System.out.println(postFromDB);
         }
         model.addAttribute("posts", posts);
         return "blogpost/index";
@@ -42,8 +41,7 @@ public class BlogPostController {
 
     @PostMapping(value = "/blogpost")
     public String addNewBlogPost(BlogPost blogPost, Model model){
-        blogPostRepository.save(new BlogPost(blogPost.getTitle(), blogPost.getAuthor(), blogPost.getBlogEntry()));
-        posts.add(blogPost);
+        blogPostRepository.save(blogPost);
         model.addAttribute("title", blogPost.getTitle());
 	    model.addAttribute("author", blogPost.getAuthor());
 	    model.addAttribute("blogEntry", blogPost.getBlogEntry());
@@ -51,11 +49,53 @@ public class BlogPostController {
 
     }
 
-    @RequestMapping(value = "/blogpost/{id}")
+    @PostMapping(value = "/blogpost/update/{id}")
+    public String updateExisting(@PathVariable Long id,BlogPost blogpost, Model model){
+
+        Optional<BlogPost> post = blogPostRepository.findById(id);
+        if(post.isPresent()){
+            BlogPost actualPost = post.get();
+            actualPost.setTitle(blogPost.getTitle);
+            actualPost.setAuthor(blogPost.getAuthor);
+            actualPost.setBlogEntry(blogPost.getBlogEntry);
+
+            blogPostRepository.save(actualPost);
+
+            model.addAttribute("blogPost", actualPost); 
+        }
+        else {
+
+        }
+        return "blogpost/result";
+    }
+
+
+
+
+    @RequestMapping(value = "/blogpost/delete/{id}")
     public String deletePostWithId(@PathVariable Long id, BlogPost blogPost){
 
         blogPostRepository.deleteById(id);
-        return "";
+        return "redirect:/";
+    }
+
+    @RequestMapping(value = "/bloggpost/edit/{id}")
+    public String editPostWithId(@PathVariable Long id, Model model) {
+
+        Optional<BlogPost>editPost = blogPostRepository.findById(id);
+
+        BlogPost result = null;
+
+        if(editPost.isPresent()) {
+            result = editPost.get();
+            model.addAttribute("blogPost", result);
+        }
+        
+        else {
+            return "Error";
+        }
+
+        return "bloggpost/edit";
     }
 
 }
