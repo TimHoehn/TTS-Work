@@ -49,7 +49,6 @@ public class Tweet {
             Date createdAt) {
         this.id = id;
         this.user = user;
-        // this.tags = tags;
         this.message = message;
         this.createdAt = createdAt;
     }
@@ -69,14 +68,6 @@ public class Tweet {
     public void setUser(User user) {
         this.user = user;
     }
-
-    // public List<Tag> getTags() {
-    //     return tags;
-    // }
-
-    // public void setTags(List<Tag> tags) {
-    //     this.tags = tags;
-    // }
 
     public String getMessage() {
         return message;

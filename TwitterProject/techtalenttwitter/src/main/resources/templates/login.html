@@ -9,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/custom.js"></script>
+
+    <div th:replace="fragments/navbar"></div>
 </head>
 <body>
     <div class="container">
@@ -20,8 +22,13 @@
                 <h4 style="color: red">Login unsuccessful.</h4>
             </div>
             <button class="btn btn-md btn-success btn-block" name="Submit" value="Login" type="Submit">Log in</button> 
-        </form>     
-        <a class="" href=""></a> 
+            
+        </form>  
+        <div class="signUp-button">
+            <a th:href="@{/signup}">
+                <button class="btn btn-md btn-success btn-block" name="Regesture" value="Signup" type="Regesture">Signup</button>
+            </a>
+        </div>
     </div>
 </body>
 </html>
